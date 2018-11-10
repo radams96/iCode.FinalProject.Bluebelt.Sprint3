@@ -13,7 +13,7 @@ def led_blink():                        #DEFINING THE LED BLINK FUNCTION.
     time.sleep(1)                           #Wait for one second.
 
 mySocket = socket.socket()                  #Create a socket.
-host = "W.X.Y.Z"                            #Set the host IP of the intended connection.
+host = "0.0.0.0"                            #Set the host IP of the intended connection.
 port = 12345                                #Set port to 12345, a common port for program testing.
 mySocket.bind((host,port))                  #Bind to the given IP through the given port.
 print "Listening..."                        #Display to user that the device is listening.
