@@ -7,12 +7,16 @@ port = 12345                                    #Set port to 12345, a common por
 mySocket.connect((host,port))                   #Connect to the given IP through the given port.
 
 while True:                                     #Loop constantly.
-    response = raw_input("Send Message?")       #Get user input.
+    response = input("Send Message?")           #Get user input.
     if(response == "yes"):                      #If yes, send a message of 'Y'.
-        mySocket.send('Y')
+        sentString = 'Y'
+        encoded = sentString.encode()
+        mySocket.send(encoded)
         time.sleep(3)
     elif(response == "no"):                     #If no, send message 'N' and terminate the loop.
-        mySocket.send('N')
+        sentString = 'N'
+        encoded = sentString.encode()
+        mySocket.send(encoded)
         break
     else:                                       #Invalid response catch-all.
         print("Invalid response.")
