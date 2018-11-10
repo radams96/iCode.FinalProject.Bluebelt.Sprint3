@@ -16,8 +16,8 @@ mySocket = socket.socket()                  #Create a socket.
 host = "0.0.0.0"                            #Set the host IP of the intended connection.
 port = 12345                                #Set port to 12345, a common port for program testing.
 mySocket.bind((host,port))                  #Bind to the given IP through the given port.
-print "Listening..."                        #Display to user that the device is listening.
-mySocket.listen(5)                         #Perform listen function.
+print("Listening...")                       #Display to user that the device is listening.
+mySocket.listen(5)                          #Perform listen function.
 connection = mySocket.accept()              #Accept message transmition.
 
 while True:
@@ -25,9 +25,9 @@ while True:
     if(message == 'Y'):                     #If message is 'Y', run led_blink()
         led_blink()
     elif(message == 'N'):                   #If message is 'N', break the loop.
-        print "Closing connection..."
+        print("Closing connection...")
         break
     else:                                   #Otherwise, print invalid message received.
-        print "No message received."
+        print("No message received.")
 connection.close()                          #Close the socket.
 GPIO.cleanup()                              #Cleanup the GPIO.
